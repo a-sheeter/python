@@ -79,4 +79,53 @@ print(x_length_words("i like apples", 2))
 print(x_length_words("he likes apples", 2))
 # should print True
 
+#New set: More Advanced
+
+#1. Check Name: Create a function that is able to check if a user’s name is located within their greeting. We need a function that accepts two parameters, a string for our sentence and a string for a name. The function should return True if the name exists within the string (ignoring any differences in capitalization).
+
+def check_for_name(sentence, name):
+  sent_array = sentence.split(" ")
+  is_name_found = True;
+  for word in sent_array:
+    if word.lower() == name.lower():
+      is_name_found = True
+    else: 
+      is_name_found = False
+  return is_name_found
+
+#test function
+print(check_for_name("My name is Jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is Samantha", "Jamie"))
+# should print False
+
+#easier solution: def check_for_name(sentence, name): return name.lower() in sentence.lower()
+
+#2. Every Other Letter: create a function that extract every other letter from a string and returns the resulting string. 
+
+def every_other_letter(word):
+  new_string = ""
+  for i in range(len(word)):
+    if i%2==0:
+      new_string += word[i]
+  return new_string
+
+#test function
+print(every_other_letter("Codecademy"))
+# should print Cdcdm
+print(every_other_letter("Hello world!"))
+# should print Hlowrd
+
+
+
+
+
+
+
+
+
+
+
 
