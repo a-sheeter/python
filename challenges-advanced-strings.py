@@ -118,6 +118,46 @@ print(every_other_letter("Codecademy"))
 print(every_other_letter("Hello world!"))
 # should print Hlowrd
 
+#3. Reverse: we want to reverse the entire string. 
+
+def reverse_string(word):
+  reversed_string = ""
+  for i in range(1, len(word)+1):
+    reversed_string += word[-i]
+  return reversed_string
+
+#test function
+print(reverse_string("Codecademy"))
+# should print ymedacedoC
+print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+
+#4. Make Spoonerism: switch the first letter of the first and second words
+
+def make_spoonerism(word1, word2):
+  return word2[0] + word1[1:] + " " + word1[0] + word2[1:]
+ 
+#test function
+print(make_spoonerism("Codecademy", "Learn"))
+# should print Lodecademy Cearn
+print(make_spoonerism("Hello", "world!"))
+# should print wello Horld!
+print(make_spoonerism("a", "b"))
+# should print b a
+
+#5. Add exclamation: Our function will accept a string and if the size is less than 20, it will fill in the remaining space with exclamation marks until the size reaches 20. If the provided string already has a length greater than 20, then we will simply return the original string. 
+
+def add_exclamation(word):
+  while len(word) < 20:
+    word += "!"
+  return word
+
+#test function
+print(add_exclamation("Codecademy"))
+# should print Codecademy!!!!!!!!!!
+print(add_exclamation("Codecademy is the best place to learn"))
+# should print Codecademy is the best place to learn
+
 
 
 
