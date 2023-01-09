@@ -127,5 +127,20 @@ print(unique_values({0:3, 1:1, 4:1, 5:3}))
 print(unique_values({0:3, 1:3, 4:3, 5:3}))
 # should print 1
 
+#4. Count First Letter: This function accepts a dictionary where the keys are last names and the values are lists of first names of people who have that last name. We need to calculate the number of people who have the same first letter in their last name. 
+def count_first_letter(my_dictionary):
+  letters = {}
+  for key in my_dictionary:
+    first_letter = key[0]
+    if first_letter not in letters:
+      letters[first_letter] = 0
+    letters[first_letter] += len(my_dictionary[key])
+  return letters
+
+#test function
+print(count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Lannister": ["Jaime", "Cersei", "Tywin"]}))
+# should print {"S": 4, "L": 3}
+print(count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Sannister": ["Jaime", "Cersei", "Tywin"]}))
+# should print {"S": 7}
 
 
